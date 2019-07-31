@@ -10,6 +10,8 @@ import pic5 from '../assets/images/pic05.jpg';
 import pic6 from '../assets/images/pic06.jpg';
 import pic7 from '../assets/images/pic07.jpg';
 
+import projects from '../data/projects';
+import http from '../assets/images/logo/perceptible.png';
 import config from '../../config';
 const IndexPage = () => (
   <Layout>
@@ -21,6 +23,24 @@ const IndexPage = () => (
     </section>
 
     <section id="wrapper">
+      {projects.map(p => {
+        return (
+          <section id={p.name} className="wrapper spotlight style1">
+            <div className="inner">
+              <a href="/#" className="image">
+                <img src={http} alt="" />
+              </a>
+              <div className="content">
+                <h2 className="major">{p.name}</h2>
+                <p>{p.description}</p>
+                <a href="/#" className="special">
+                  Learn more
+                </a>
+              </div>
+            </div>
+          </section>
+        );
+      })}
       <section id="one" className="wrapper spotlight style1">
         <div className="inner">
           <a href="/#" className="image">
